@@ -1,0 +1,268 @@
+:root {
+    --color_one: #cec8c1;
+    --color_two: #83dfe3;
+    --color_three: #268f8e;
+    --color_four: #f6f0fc;
+    --color_five: #94a7a8;
+    --color_six: #e7c7b4;
+}
+
+body {
+    background-color: var(--color_four);
+    font-family: 'Original Surfer', sans-serif;   
+}
+body p {
+    font-size: 1.25em;
+}
+#links {
+    display: none;
+    padding: 0;
+    grid-area: links;
+}
+img {
+    max-width: 90%;
+}
+nav {
+    padding: 0;
+    margin: 0 1em;
+}
+nav li {
+    display: block;
+    text-decoration: none;
+    padding: .5em;
+    margin-bottom: .5em;
+    text-align: center;
+    width: auto;
+}
+nav li:hover {
+    background-color: var(--color_two);
+}
+.mobile_icon {
+    vertical-align: top;
+    grid-area: m_icon;
+}
+.topsail {
+    color: var(--color_three);  
+    float: left;
+    margin: 0 1em;
+    padding: 0;
+    grid-area: topsail;
+}
+.topsail h1 {
+    margin-top: .25em;
+    margin-bottom: 0;
+}
+.main_nav {
+    display: grid;
+    grid-template-areas: 
+    "m_icon"
+    "links"
+    "topsail";
+}
+.main_nav a:link {
+    color: var(--color_three);
+}
+.main_nav a:visited {
+    color: var(--color_three);
+}
+
+#index_header {
+    grid-area: indexheader;
+}
+#about_header {
+    grid-area: ah;
+}
+h1, h2, h3 {
+    color: var(--color_three);
+}
+h2 {
+    text-decoration: underline;
+}
+.div_item p {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+}
+/* Things to do layout */
+#things_to_do_1 {
+    grid-area: ttd1;
+}
+#things_to_do_1_img {
+    grid-area: img1;
+}
+#things_to_do_2 {
+    grid-area: ttd2;
+}
+#things_to_do_2_img {
+    grid-area: img2;
+}
+#things_to_do_3 {
+    grid-area: ttd3;
+}
+#things_to_do_3_img {
+    grid-area: img3;
+}
+#index_main {
+    clear:both;
+    display: grid;
+    grid-template-areas: 
+        "indexheader"
+        "img1"
+        "ttd1"
+        "img2"
+        "ttd2"
+        "img3"
+        "ttd3";
+}
+/* about page layout */
+#about1 {
+    grid-area: a1;
+}
+#about1_img {
+    grid-area: a1img;
+}
+#about2 {
+    grid-area: a2;
+}
+#about2_img {
+    grid-area: a2img;
+}
+#about3 {
+    grid-area: a3;
+}
+#about3_img {
+    grid-area: a3img;
+}
+#about_main {
+    clear:both;
+    display: grid;
+    grid-template-areas: 
+        "ah"
+        "a1img"
+        "a1"
+        "a2img"
+        "a2"
+        "a3img"
+        "a3";
+}
+/* emergency page layout */
+#emergency1 {
+    grid-area: e1;
+}
+#local_information {
+    grid-area: li;
+}
+#area_hospitals {
+    grid-area: ah;
+}
+#emergency_main {
+    clear: both;
+    display: grid;
+    grid-template-areas: 
+        "e1"
+        "li"
+        "ah";
+}
+.primary_border {
+    border: 5px solid var(--color_two);
+    border-radius: 1%;
+    background-color: var(--color_six);
+}
+.box_border {
+    padding: 1em;
+    margin: 1em;
+}
+footer {
+    text-align: center;
+}
+footer p {
+    font-size: small;
+}
+#social {
+    background-color: var(--color_six);
+    padding: 0;
+}
+#social a:visited {
+    color: var(--color_three);
+}
+#social a:link {
+    color: var(--color_three);
+}
+#social a:hover {
+    color: black;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+
+#emergency1 ul {
+    list-style-type: none;
+}
+
+
+@media screen and (min-width: 665px) {
+    .mobile_icon {
+        display: none;
+    }
+    #links {
+        display: block !important;
+        float: left;
+    }
+    nav li {
+        margin-left: auto;
+        display: inline-block;
+    }
+    .topsail {
+        font-size: 1.4em;
+    }
+    h1 {
+        clear: both;
+    }
+    .main_nav {
+        grid-template-areas: 
+        "topsail"
+        "links";
+    }
+    #index_main {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "indexheader indexheader"
+            "img1 ttd1"
+            "img2 ttd2"
+            "img3 ttd3";
+    }
+    #about_main {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "ah     ah"
+            "a1img  a1"
+            "a2img  a2" 
+            "a3img  a3";
+    }
+    
+}
+@media screen and (min-width: 830px) {
+    #emergency_main {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "e1 e1"
+            "li ah";
+    }
+}
+@media screen and (min-width: 995px) {
+    .main_nav {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 
+        "topsail""links";
+    }
+    #links {
+        float: right;
+    }
+}
